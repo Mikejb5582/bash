@@ -24,6 +24,17 @@ DAY 1
     touch file{6..9} *** creates files file6 file7 file8 file9 
     cp file1 file1.cp ** copies file
     mv file2 mv capfile2 ** renames file
+    rm file1 ** removes
     tail/head -n5 /etc/passwd ***shows bottom or top 5 lines in a directory
     which cat *** shows which directory cat command is in
-    locate 
+    whereis cat *** shows man page
+    whatis cat *** shows what it is?
+    locate ** yep
+    
+    man find | egrep -iB3 *** shows the 3 lines before the keyword, A after, C both
+    find / -maxdepth 2 type -f -iname "file*" 2>/dev/null *** `finds filenames that starts with file case insensitive, search whole file system, 2 directories deep 
+    find /var/log/ -iname *.log -exec ls -al {} 2>/dev/null \; *** finds all .log files in the /var/log directory and runs the ls -al command
+    find /var/log/ -iname *.log -printf '%f\n' 2>/dev/null *** finds files names of .log files
+    man find | egrep "^\s+%" *** displays options for ^
+    egrep "unbuntu|student" /etc/passwd *** finds ubuntu and student in /etc/passwd
+    
