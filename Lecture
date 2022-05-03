@@ -1,0 +1,26 @@
+DAY 1
+
+    man <command>
+      ex. /<keyword> *** n forward b back
+    man -k user *** every man page that contains "user"
+    man -k user | egrep "add" *** ^ and contains "add"
+    
+    curl cht.sh/<command>
+    gives you results from cht.sh on a command
+    
+    history ** yea no shit
+    !2009 shows the 2009th command and its results
+    cat *** displays file contents
+    ctrl r ** (reverse-i-search) *** shows the first history entry that matches search *** ctrl r to cycle through results
+    
+    cd - takes you to the last directory you were in
+    cd .. takes you one back *** /var/lods > /var
+    cd . shows current directory
+    ../ script.sh *** runs script at current location
+    
+    touch file1 *** creates file1
+    echo "ya mom" > file 1 ** overwrites to file 1    **  >> appends to file1
+    cat fakefile 2> /dev/null *** black hole
+    touch file{6..9} *** creates files file6 file7 file8 file9 
+    cp file1 file1.cp ** copies file
+    mv file2 mv capfile2 ** renames file
