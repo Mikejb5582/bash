@@ -24,3 +24,4 @@ DAY 1
     touch file{6..9} *** creates files file6 file7 file8 file9 
     cp file1 file1.cp ** copies file
     mv file2 mv capfile2 ** renames file
+    tail/head -n5 shows bottom or top 5 lines in a file
