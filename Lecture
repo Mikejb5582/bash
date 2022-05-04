@@ -38,3 +38,38 @@ DAY 1
     man find | egrep "^\s+%" *** displays options for ^
     egrep "unbuntu|student" /etc/passwd *** finds ubuntu and student in /etc/passwd
     
+    egrep "root|ubuntu" /etc/passwd | cut -d: -f-1 *** prints portion of a line before first insstance of delimiter ":"
+        root
+        ubuntu
+    
+    student@lin-ops:~$ egrep "root|ubuntu" /etc/passwd | cut -d: -f1,3-5,7  *** prints 1st,3rd-5th. and last field
+    root:0:0:root:/bin/bash
+    ubuntu:1000:1000:Ubuntu:/bin/bash
+    
+    | rev *** reverses
+    ex. -f1 | rev
+    >> rev * again
+    /bin/bash
+    
+    find /var/log -iname "*.log" -prntf '%f' 2> /dev/null   *** finds all files in /var/log that end in '.log'
+    
+DAY 2
+    
+    awk -F: '{print $1,$3}' /etc/passwd               *** prints first and third items after delimiter ':', can be in any order ex. $3,$1
+    awk 'BEGIN {FS=":"}                               *** allows you to tell awk where to start
+    tail /etc/passwd | awk -F: '{print $NF}'          *** finds last field
+    cat /etc/passwd | awk -F: '($3 >= 110){print $0}' *** finds lines with any number >= 110 in field 3, $0 tells it to print the whole line
+                             ^^--'BEGIN {OFS="#"}'    *** changes field delimiter to # when it prints output
+    tail /etc/passwd | awk -F: '{print $3}' | sort -n *** sorts (alpha)numerically, -nr to sort descending
+    | sort -u                                         *** only prints duplicates once
+    cat ____ | awk '{print $1}' | soer -nr | uniq -c  *** prints n reverse alphanumeric order, and shows the number of duplicates
+    
+    tail /etc/passwd > sedpasswd.txt
+    sed 's/home/nobodyhome/g' sedpasswd.txt            *** substitutes home with nobodyhome, g makes it run on every occurance, without g it only runs on the first
+    sed -i 's/\/bin\/bash\/been\/sus/' sedpasswd.txt   *** -i changes actual file, without it just changes the output
+           's+/bin/bash+/been/sus+'                    *** + could be any character
+    sed '/^c/d' file.txt                               *** looks for letter c and (d) deletes the line
+    sed 's/:x:/ /' file.txt                            *** replaces :x: with ' '
+    sed -e '/^c/d' -e 's/nobodyhome/home/' file.txt    *** -e runs first expression then runs second expression on matched lines ** mini pipe
+    sed '/^c/d';'s/nobodyhome/home/' file.txt          *** same thing as above
+    
