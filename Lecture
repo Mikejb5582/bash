@@ -160,3 +160,68 @@ DAY 3
       md5sum MBRcopy                                      *** returns md5 hash of MBRcopy file, cannot do to directories
       echo ~/Desktop/MBRcopy | md5sum                     *** returns hash of the piped string
       
+
+
+
+
+      #!/bin/bash
+      # ----Declare Functions
+      #--For loops
+      #List of items
+      
+      funcion listo () {
+      for NAME in Marky Ricky Danny Terry Mickey Davy Timmy Tommy Joey Robby Johnny Brian
+        do
+            echo $NAME
+        done
+       }
+      
+      #----Run Functions
+      listo                                                *** echos each with a new line
+      
+      
+      
+      
+      function southpark () {
+      names='Stan Kyle Cartman'
+      for names in $names
+      do
+        echo $name
+      done
+      echo "All done!"
+      }
+      
+      #----Run Functions
+      #listo
+      southpark                                             *** same exact output 
+      
+      
+      
+      function range () {
+      for value in {1..5}
+      do
+        echo $value
+      done
+      echo "ALL done!"
+      }
+                                                            *** counted from 1 to 5 then echo all done
+      #listo
+      #southpark
+      range
+      
+      
+      
+      
+      function rocket () {
+      for value in {10..1}
+      do
+        echo $value
+        sleep 1
+      done
+      echo "Blast off!"
+      }                                                     *** Counts down by 1 from 10 every 1 second, then echos blast off
+      rocket
+      
+      
+      
+      
