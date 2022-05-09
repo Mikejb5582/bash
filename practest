@@ -100,3 +100,5 @@ function q1()
   pkill $1
   #Your code here
 }
+
+touch -t ${filedate}1730.00 $newfile
