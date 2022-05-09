@@ -102,3 +102,14 @@ function q1()
 }
 
 touch -t ${filedate}1730.00 $newfile
+
+
+sort a full path list of all files in a directory, sorted by time, modified in the past day
+
+function q1()
+{
+  #Valid Variables are:
+  find $dirpath -mtime -1 -type f | sort
+  #Your code here
+
+}
