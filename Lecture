@@ -225,3 +225,119 @@ DAY 3
       
       
       
+      function countloop () {                               ***  echos $x is equal to 0,1,2,3,4,5 each on a new line
+      for (( x=0 ; x<=5; x++))
+      do
+        echo "\$x is equal to $x"
+      done
+      }
+      
+      countloop
+      
+      
+      
+      
+      function countloop2 () {
+      start=1
+      end=5
+      for ((i=start; i<=end; i++))                          *** counts from 1 to 5 on new lines
+      do
+        echo $i
+      done
+      }
+      
+      countloop2
+      
+      
+      
+      
+      function renamer () {
+      for i in $(ls *.txt)
+      do
+        mv $i $(basename -s .txt $i).pdf                    *** renames files in current directory from .txt to .pdf
+      done
+      }
+      
+      renamer
+      
+      
+      
+      function lightyear () {
+      i=0
+      for (( ; ; ))
+      do
+        echo "Iteration: $i - Do Infinity and Beyond"
+        (( i++ ))
+   ###if [[ $i -gt 9000 ]];then
+   ###  "It's too much cum!"  
+   ###   break                                              *** Counts infinitely, commented segment stops it at 9000
+   ###   fi
+      done
+      }
+      
+      lightyear
+      
+      
+      
+      function thanksdad () {
+      for i in {0..10}
+      do
+        if [[ $i -eq 9 ]];then                             *** counts 0-10 (except 9) then echos
+            continue
+        fi
+        echo $1
+        (( i++ ))
+      done
+      echo "looks like cum"
+      }
+      
+      thanksdad 
+      
+      
+      
+      
+      function basicwhile () {
+      counter=1
+      while [[ $counter -le 10 ]]                          *** counts until 10 then echos
+      do
+        echo $counter
+        ((counter++))
+      done
+      echo "All Done!"
+      }
+      
+      basicwhile
+      
+      
+      
+      function hatred () {
+      cat > myfile.del << YEET
+      always
+      do
+      your                                                  *** echos each word on new line (including say less)
+      best
+      say less
+      YEET
+      
+      for file in #"$(cat myfile.del)#"                     *** "" make it all output to one line
+    ##  echo "$line"                                        *** commented segment makes the output lines appear as entered. must have both sets of ""
+    ##done
+      }
+      
+      hatred
+      
+      
+      
+      
+      function suffering () {
+      counter=1
+      until [[ $counter -gt 10 ]]                            *** counter 1-10 then echos 
+      do
+        echo $counter
+        ((counter++))
+      done
+      echo "All done!"
+      }
+      
+      suffering
+      
